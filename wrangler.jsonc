@@ -1,0 +1,14 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "chaoxing-sign-docs",
+  "compatibility_date": "2026-05-20",
+  "observability": {
+    "enabled": true
+  },
+  "assets": {
+    "directory": "docs/.vitepress/dist"
+  },
+  "compatibility_flags": [
+    "nodejs_compat"
+  ]
+}
