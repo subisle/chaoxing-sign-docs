@@ -5,6 +5,9 @@ hero:
   name: 学习通签到助手
   text: 用户使用文档
   tagline: 只讲你能用什么、怎么用，不讲后台实现细节。
+  image:
+    src: /illustrations/hero-dashboard.svg
+    alt: 学习通签到助手文档预览
   actions:
     - theme: brand
       text: 开始使用
@@ -33,6 +36,17 @@ features:
 - 第一次接触项目，想快速跑通完整使用流程的人
 - 已经登录成功，想了解各页面怎么配合使用的人
 - 只关心功能和操作步骤，不想看技术实现的人
+
+<div class="doc-visual-grid">
+  <figure class="doc-shot">
+    <img src="/illustrations/rules-workflow.svg" alt="规则配置和课程绑定示意图">
+    <figcaption>先建规则，再绑定课程，再开启监控。</figcaption>
+  </figure>
+  <figure class="doc-shot">
+    <img src="/illustrations/notify-history.svg" alt="通知与学习记录示意图">
+    <figcaption>通知和记录配合使用，日常排查更直接。</figcaption>
+  </figure>
+</div>
 
 ## 推荐阅读顺序
 
