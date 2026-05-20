@@ -4,6 +4,7 @@ export default defineConfig({
   lang: "zh-CN",
   title: "学习通签到助手",
   description: "面向用户的功能说明与使用文档",
+  base: "/",
   cleanUrls: true,
   lastUpdated: true,
   themeConfig: {
