@@ -1,82 +1,71 @@
 # 学习通签到助手文档
 
-这是一个独立的 VitePress 文档仓库，用于提供“学习通签到助手”的用户使用说明。
+这是“学习通签到助手”的独立 VitePress 文档仓库，面向终端用户提供登录、规则配置、课程签到、通知提醒和学习记录的使用说明。
 
-文档原则：
+本仓库只维护用户文档和文档站部署配置，不记录后端实现细节。
 
-- 只写功能与使用方法
-- 不写实现原理
-- 站在终端用户角度组织内容
+## 文档内容
 
-## 本地运行
+- [快速开始](docs/guide/start.md)：登录、同步课程、完成第一次配置。
+- [创建规则](docs/guide/rules.md)：配置位置、图片、签到偏好并绑定课程。
+- [签到与课程](docs/guide/signing.md)：手动签到、课程监控、常见签到方式。
+- [通知设置](docs/guide/notifications.md)：邮件、Webhook、微信 Bot 通知。
+- [学习记录](docs/guide/history.md)：查看成功、失败、未签到和签退状态。
+- [常见问题](docs/guide/faq.md)：整理日常使用中的排查入口。
+
+## 本地预览
 
 ```bash
 npm install
 npm run dev
 ```
+
+默认启动 VitePress 文档站，访问终端输出的本地地址即可预览。
 
 ## 构建
 
 ```bash
 npm run build
+npm run preview
 ```
 
-## StackBlitz
+构建产物位于：
 
-导入仓库后，在项目根目录执行：
-
-```bash
-npm install
-npm run dev
+```text
+docs/.vitepress/dist
 ```
-
-默认文档目录已经配置好，直接启动即可预览 VitePress 站点。
 
 ## Cloudflare Pages 部署
 
 推荐部署参数：
 
-- Framework preset：`None`
-- Build command：`npm run build`
-- Build output directory：`docs/.vitepress/dist`
-- Root directory：仓库根目录
-- Node.js version：`20`
+| 配置项 | 值 |
+| --- | --- |
+| Framework preset | `None` |
+| Build command | `npm run build` |
+| Build output directory | `docs/.vitepress/dist` |
+| Root directory | 仓库根目录 |
+| Node.js version | `20` |
 
-### 接入步骤
+如果绑定独立域名或子域名，当前 VitePress `base` 已配置为 `/`，无需额外路径前缀。
 
-1. 登录 Cloudflare Dashboard
-2. 打开 `Workers & Pages`
-3. 选择 `Create application`
-4. 选择 `Pages`
-5. 连接 GitHub 仓库 `subisle/chaoxing-sign-docs`
-6. 按上面的构建参数填写
-7. 点击部署
+## 维护约定
 
-### 自定义域名
+- 只写用户能看到、能操作、能排查的内容。
+- 避免写内部实现、接口细节和敏感配置。
+- 新增功能时同步更新首页导航、对应指南和 FAQ。
+- 文档截图或示意图放在 `docs/public/illustrations/`。
 
-这个仓库默认已经使用：
+## 目录结构
 
-```ts
-base: "/"
+```text
+docs/
+├── index.md              # 文档站首页
+├── guide/                # 用户指南
+├── public/illustrations/ # 文档插图和示意图
+└── .vitepress/           # VitePress 配置与主题样式
 ```
 
-所以更适合绑定独立域名或子域名，例如：
+## License
 
-- `docs.example.com`
-- `help.example.com`
-
-在 Cloudflare Pages 项目中：
-
-1. 打开 `Custom domains`
-2. 添加你的域名
-3. 按 Cloudflare 提示完成 DNS 绑定
-4. 等待证书签发完成
-
-### 后续更新
-
-文档改动后直接推送到 `main`，Cloudflare Pages 会自动重新部署。
-
-## 目录说明
-
-- `docs/`：VitePress 文档内容
-- `docs/.vitepress/`：站点配置与主题样式
+MIT License. See [LICENSE](LICENSE).
